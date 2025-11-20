@@ -1,0 +1,15 @@
+name: Test Multiple Jobs
+on: [push]
+
+jobs:
+  debug:
+    runs-on: codebuild-gha-test-runner-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - run: echo "Debug job running"
+      - run: sleep 60
+  
+  preview:
+    runs-on: codebuild-gha-test-runner-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - run: echo "Preview job running" 
+      - run: sleep 60

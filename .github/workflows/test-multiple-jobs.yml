@@ -9,7 +9,7 @@ jobs:
       - run: sleep 60
   
   preview:
-    runs-on: codebuild-TestGithubAction-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: codebuild-TestGithubActionWithoutFleet-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
       - run: echo "Preview job running" 
       - run: sleep 60
